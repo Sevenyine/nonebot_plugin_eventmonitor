@@ -10,6 +10,10 @@ _✨ 基于NoneBot2实现的 监测QQ群事件 插件 ✨_
 
 </div>
 
+# 自用 修改了部分口头禅
+
+
+
 ## 介绍：
 > 监测群组的以下变动事件：
 >
@@ -75,40 +79,6 @@ pip install --upgrade nonebot-plugin-eventmonitor
 |  chuo_cd   | int  |    0    |       chuo_cd = 10       |             戳一戳的cd（选填）              |
 
 戳一戳的cd默认为0即没有cd
-
-<details>
-    <summary><h2>更新日志</h2></summary>
-
-- v0.1.2
-
-  - 增加了戳一戳的文案
-  
-  - 修改一些不重要的bug
-
-- v0.1.1
-
-  - 好像改了什么..忘了...
-
-- v0.1.0
-  - 抛弃原有的配置模式（具体看"配置"）
-  - 给戳一戳加了cd（本人觉得功能鸡肋）
-  - 修复管理员变动时API报错问题[#issue1](https://github.com/Reversedeer/nonebot_plugin_eventmonitor/issues/1)
-
-- v0.0.6
-  - 修复了大量的bug
-  </details>
-
-## 关于 ISSUE
-
-以下 ISSUE 会被直接关闭
-
-- 提交 BUG 不使用 Template
-- 询问已知问题
-- 提问找不到重点
-- 重复提问
-
-> 请注意, 开发者并没有义务回复您的问题. 您应该具备基本的提问技巧。  
-> 有关如何提问，请阅读[《提问的智慧》](https://github.com/ryanhanwu/How-To-Ask-Questions-The-Smart-Way/blob/main/README-zh_CN.md)
 
 ## 感谢：
 

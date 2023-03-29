@@ -75,6 +75,7 @@ chuo_msg = [
     f"你说的对，但是bot的戳一戳cd是7秒",
     f"闲的没事去玩漂流瓶吧",
     f"啊吧啊吧",
+    f"[FATAL] httpx.ReadTimeout",
     f"T^2=\frac{4\pi^2 r^3}{MG}",
     f"我想要假期",
     f"v我50",

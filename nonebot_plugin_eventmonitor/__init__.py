@@ -99,9 +99,8 @@ async def send_rongyu(bot: Bot, event: HonorNotifyEvent, state: T_State):
 
 @files.handle()
 async def handle_first_receive(bot: Bot, event: GroupUploadNoticeEvent, state: T_State):
-    rely = f'[CQ:at,qq={event.user_id}]\n' \
-           f'[CQ:image,file=https://q4.qlogo.cn/headimg_dl?dst_uin={event.user_id}&spec=640]' \
-           f'\n 上传了新文件，感谢你一直为群里做贡献喵~[CQ:face,id=175]'
+    rely = f'QQ={event.user_id}\n' \
+           f'\n 上传了新文件~[CQ:face,id=175]'
     await files.finish(message=Message(rely))
 
 
@@ -124,5 +123,5 @@ async def admin_chance(bot: Bot, event: GroupAdminNoticeEvent, state: T_State):
 
 @red_packet.handle()
 async def hongbao(bot: Bot, event: LuckyKingNotifyEvent, state: T_State):
-    rely_msg = f"[CQ:at,qq={event.user_id}]\n本次红包运气王为：[CQ:at,qq={event.target_id}]"
+    rely_msg = f"[CQ:at,qq={event.user_id}]\n本次红包运气王为：QQ={event.target_id}"
     await red_packet.finish(message=Message(rely_msg))

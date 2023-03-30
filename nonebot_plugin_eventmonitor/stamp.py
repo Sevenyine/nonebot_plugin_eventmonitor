@@ -77,6 +77,7 @@ chuo_msg = [
     f"戳坏了，智商-1",
     f"啊吧啊吧",
     f"[FATAL] httpx.ReadTimeout",
+    f"ssl.SSLWantReadError: The operation did not complete (read) (_ssl.c:2548)",
     f"我是一头好人啊，不是不是我是一匹村民",
     f"啊对的对的，啊不对不对",
     f"啊呜，太舒服刚刚竟然睡着了。什么事？",

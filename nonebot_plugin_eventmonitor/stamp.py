@@ -1,20 +1,8 @@
 import random
-import nonebot
+from .utils import nickname
 
 
-try:
-    bot_name = nonebot.get_driver().config.bot_name
-except:
-    bot_name = "寄"
-
-chuo_CD_dir = {}
-
-try:
-    chuo_cd = nonebot.get_driver().config.chuo_cd
-except:
-    chuo_cd = 0
-    
-def chuo_send_msg():
+async def chuo_send_msg():
     rand_num = random.randint(0, len(chuo_msg) - 1)
     return chuo_msg[rand_num]
 
@@ -129,6 +117,3 @@ chuo_msg = [
     f"一条鱼在太阳底下快被晒死了，临死前对另一条鱼说：兄弟啊我干了哈你随意。",
     f"更多冷笑话，尝试捡捡漂流瓶吧～"
 ]
-
-
-

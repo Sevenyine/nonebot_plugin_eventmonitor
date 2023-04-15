@@ -38,15 +38,9 @@ nb plugin install nonebot_plugin_eventmonitor
 ```
 
 <details><summary><h3>pip</h3></summary>
-
-
 ```
 pip install nonebot-plugin-eventmonitor
 ```
-打开 nonebot2 项目的 `bot.py` 文件, 在其中写入
-
-    nonebot.load_plugin("nonebot_plugin_eventmonitor")
-
 在’pyproject.toml‘文件中写入
 
     "nonebot_plugin_eventmonitor"
@@ -69,16 +63,47 @@ pip install --upgrade nonebot-plugin-eventmonitor
 
 ## 配置
 
-在bot目录对应的.env.*文件中添加（SUPERUSERS应该都填了吧）
+| config  | type | default |   example    |       usage        |
+| :-----: | :--: | :-----: | :----------: | :----------------: |
+| chuo_cd | int  |    0    | chuo_cd = 10 | 戳一戳的cd（选填） |
 
-|   config   | type | default |         example          |                    usage                    |
-| :--------: | :--: | :-----: | :----------------------: | :-----------------------------------------: |
-|   bot_qq   | int  |   寄    |    bot_qq = 123456789    |    bot群聊变动和群荣誉变化时判断（必填）    |
-| SUPERUSERS | int  |   寄    | SUPERUSERS=["123456789"] | nonebot超级管理员，用于判断是否为主人(必填) |
-|  bot_name  | str  |   寄    |    bot_name = "AI-Md"    |               bot的昵称(必填)               |
-|  chuo_cd   | int  |    0    |       chuo_cd = 10       |             戳一戳的cd（选填）              |
+<details>
+    <summary><h2>更新日志</h2></summary>
 
-戳一戳的cd默认为0即没有cd
+- v0.1.5
+
+  - 优化配置文件 [#issue6](https://github.com/Reversedeer/nonebot_plugin_eventmonitor/issues/6)
+  - 删除冗余代码
+  - 修复获取superusers数值bug
+
+- v0.1.3
+  - 修复配置文件bug
+- v0.1.2
+  - 增加了戳一戳的文案
+
+  - 修改一些bug
+- v0.1.1
+
+  - 好像改了什么..忘了...
+- v0.1.0
+  - 抛弃原有的配置模式
+  - 给戳一戳加了cd（本人觉得功能鸡肋）
+  - 修复管理员变动时API报错问题[#issue1](https://github.com/Reversedeer/nonebot_plugin_eventmonitor/issues/1)
+- v0.0.6
+  - 修复了大量的bug
+  </details>
+
+## 关于 ISSUE
+
+以下 ISSUE 会被直接关闭
+
+- 提交 BUG 不使用 Template
+- 询问已知问题
+- 提问找不到重点
+- 重复提问
+
+> 请注意, 开发者并没有义务回复您的问题. 您应该具备基本的提问技巧。  
+> 有关如何提问，请阅读[《提问的智慧》](https://github.com/ryanhanwu/How-To-Ask-Questions-The-Smart-Way/blob/main/README-zh_CN.md)
 
 ## 感谢：
 

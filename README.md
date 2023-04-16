@@ -38,10 +38,10 @@ nb plugin install nonebot_plugin_eventmonitor
 ```
 
 <details><summary><h3>pip</h3></summary>
-```
-pip install nonebot-plugin-eventmonitor
-```
+
+    pip install nonebot-plugin-eventmonitor
 在’pyproject.toml‘文件中写入
+
 
     "nonebot_plugin_eventmonitor"
 
@@ -70,8 +70,11 @@ pip install --upgrade nonebot-plugin-eventmonitor
 <details>
     <summary><h2>更新日志</h2></summary>
 
-- v0.1.5
+- v0.1.6
 
+  - 修复bug
+  
+- v0.1.5
   - 优化配置文件 [#issue6](https://github.com/Reversedeer/nonebot_plugin_eventmonitor/issues/6)
   - 删除冗余代码
   - 修复获取superusers数值bug

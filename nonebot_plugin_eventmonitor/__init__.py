@@ -86,8 +86,8 @@ async def send_rongyu(event: HonorNotifyEvent, bot: Bot):
     await qrongyu.finish(message=Message(rely_msg))
 
 
-@files.handle()
-async def handle_first_receive(bot: Bot, event: GroupUploadNoticeEvent, state: T_State):
+@files.handle()                                                                         #上传群文件
+async def handle_first_receive(event: GroupUploadNoticeEvent):
     rely = f'QQ={event.user_id}\n' \
            f'\n 上传了新文件~[CQ:face,id=175]'
     await files.finish(message=Message(rely))
@@ -112,7 +112,7 @@ async def admin_chance(event: GroupAdminNoticeEvent, bot: Bot):
     rely_msg = await admin_changer(event.sub_type, event.user_id, bot_qq)
     await group_admin.finish(message=Message(rely_msg))
 
-@red_packet.handle()
-async def hongbao(bot: Bot, event: LuckyKingNotifyEvent, state: T_State):
-    rely_msg = f"[CQ:at,qq={event.user_id}]\n本次红包运气王为：QQ={event.target_id}"
+@red_packet.handle()                                                                    #红包运气王
+async def hongbao(event: LuckyKingNotifyEvent):
+    rely_msg = f"本次红包运气王为：QQ={event.target_id}~"
     await red_packet.finish(message=Message(rely_msg))

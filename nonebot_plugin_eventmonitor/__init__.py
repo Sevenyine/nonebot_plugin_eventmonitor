@@ -93,7 +93,7 @@ async def handle_first_receive(event: GroupUploadNoticeEvent):
     #        f'[CQ:image,file=https://q4.qlogo.cn/headimg_dl?dst_uin={event.user_id}&spec=640]' \
     #        f'\n 上传了新文件，感谢你一直为群里做贡献喵~[CQ:face,id=175]'
     # await files.finish(message=Message(rely))
-    rely = QQ={event.user_id} + '\n' + \
+    rely = f'QQ={event.user_id}' + '\n' + \
            MessageSegment.image(f'https://q4.qlogo.cn/headimg_dl?dst_uin={event.user_id}&spec=640') + \
            '\n 上传了新文件~' + MessageSegment.face(175)
     await files.finish(message=rely)
@@ -122,5 +122,5 @@ async def admin_chance(event: GroupAdminNoticeEvent, bot: Bot):
 async def hongbao(event: LuckyKingNotifyEvent):
     # rely_msg = f"[CQ:at,qq={event.user_id}]\n本次红包运气王为：[CQ:at,qq={event.target_id}]"
     # await red_packet.finish(message=Message(rely_msg))
-    rely_msg = "本次红包运气王为：" + QQ={event.target_id}
+    rely_msg = "本次红包运气王为：" + f'QQ={event.target_id}'
     await red_packet.finish(message=rely_msg)

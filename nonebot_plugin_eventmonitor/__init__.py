@@ -93,9 +93,7 @@ async def handle_first_receive(event: GroupUploadNoticeEvent):
     #        f'[CQ:image,file=https://q4.qlogo.cn/headimg_dl?dst_uin={event.user_id}&spec=640]' \
     #        f'\n 上传了新文件，感谢你一直为群里做贡献喵~[CQ:face,id=175]'
     # await files.finish(message=Message(rely))
-    rely = f'QQ={event.user_id}' + '\n' + \
-           MessageSegment.image(f'https://q4.qlogo.cn/headimg_dl?dst_uin={event.user_id}&spec=640') + \
-           '\n 上传了新文件~' + MessageSegment.face(175)
+    rely = f'让我看看你的文件里卖的是什么药'+ MessageSegment.face(175)
     await files.finish(message=rely)
 
 

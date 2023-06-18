@@ -27,7 +27,7 @@ async def del_user_bye(add_time, user_id):
         del_user_msg = f"⌈{del_time}⌋\n@{user_id}恭送主人离开喵~"
         print(superusers)
     else:
-        del_user_msg = f"✈️ 成员变动⌈{del_time}⌋\nQQ号为：{user_id}的小可爱退群喽~" \
+        del_user_msg = f"✈️ 成员变动⌈{del_time}⌋\nQQ号为：{user_id}的小可爱退群/被踢出群聊喽~" \
                        f"[CQ:image,file=https://q4.qlogo.cn/headimg_dl?dst_uin={user_id}&spec=640]"
         return del_user_msg
 

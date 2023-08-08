@@ -37,7 +37,9 @@ _✨ 基于NoneBot2实现的 监测QQ群事件 插件 ✨_
 nb plugin install nonebot_plugin_eventmonitor
 ```
 
-<details><summary><h3>pip</h3></summary>
+<details>
+    <summary><h3>pip</h3></summary>
+
 
     pip install nonebot-plugin-eventmonitor
 在’pyproject.toml‘文件中写入
@@ -45,55 +47,114 @@ nb plugin install nonebot_plugin_eventmonitor
 
     "nonebot_plugin_eventmonitor"
 
-</details>
-
-<details><summary><h3>git clone</h3></summary>
-
-```
-git clone https://github.com/Reversedeer/nonebot_piugin_eventmonitor.git
-```
-
-</details>
-
-### 更新
+### 更新：
 
 ```
 pip install --upgrade nonebot-plugin-eventmonitor
 ```
 
+</details>
+
 ## 配置
 
-| config  | type | default |   example    |       usage        |
-| :-----: | :--: | :-----: | :----------: | :----------------: |
-| chuo_cd | int  |    0    | chuo_cd = 10 | 戳一戳的cd（选填） |
+|   config   |   type   | default |        example        |                            usage                             |
+| :--------: | :------: | :-----: | :-------------------: | :----------------------------------------------------------: |
+|  chuo_cd   |   int    |    0    |     chuo_cd = 10      |                      戳一戳的cd（选填）                      |
+| SUPERUSERS | set[str] |  set()  | SUPERUSERS=["114514"] | 机器人超级用户，可以使用权限 [`SUPERUSER`](https://nonebot.dev/docs/2.0.0/api/permission#SUPERUSER)(必填) |
+|  NICKNAME  | set[str] |  set()  |   NICKNAME=["IKun"]   | 机器人昵称，通常协议适配器会根据用户是否 @user 或者是否以机器人昵称开头来判断是否是向机器人发送的消息(必填) |
+
+## 指令帮助
+
+```
+User: (戳一戳-> bot)
+Bot: "请不要戳AI-Md >_<"
+
+SUPERUSER/GROUP_ADMIN/GROUP_OWNER: "/开启 群荣誉检测"
+Bot: "群荣誉检测功能已开启喵"
+
+SUPERUSER/GROUP_ADMIN/GROUP_OWNER: "/event配置"
+Bot: "
+	群114514的Event配置状态：
+	戳一戳: 开启
+	群荣誉检测: 开启
+	群文件检测: 开启
+	群成员减少检测: 开启
+	群成员增加检测: 开启
+	管理员变动检测: 开启
+	运气王检测: 关闭
+	"
+```
+
+
+
+## 指令结构帮助：
+
+```
+usage = """
+    指令1：戳一戳(戳一戳bot获取文案)
+    指令2：群荣誉监测(检测群聊中龙王，群聊之火，快乐源泉的获得并发送提示，当 bot获得群荣誉时有特殊消息)
+    指令3：群文件检测(检测所有人发送群文件并发送提示)
+    指令4：群成员减少检测(当有人退群时，发送退群消息；当主人/superuser退群有特殊回复)
+    指令5：群成员增加检测(当有人入群时，发送入群欢迎，当bot首次入群会乞讨管理，当主人/superuser入群会有特殊回复)
+    指令6：管理员变动检测(当新增管理员或取消管理员时发送消息提示，当bot自身被上/下管理时有特殊回复)
+    指令7：运气王检测(检测抢红包检测后的运气王并发送提示消息)
+    """
+    
+json结构(默认值):
+{
+	"114514": {
+        "chuo": true,
+        "honor": true,
+        "files": true,
+        "del_user": true,
+        "add_user": true,
+        "admin": true,
+        "red_package": false
+    }
+}
+```
 
 <details>
     <summary><h2>更新日志</h2></summary>
 
-- v0.1.6
 
-  - 修复bug
+- v0.2.0
+
+  - 🐛修复bot加群bug[issue6](https://github.com/Reversedeer/nonebot_plugin_eventmonitor/issues/18)
   
+  - 优化提示
+  
+- v0.1.9
+  - 🚨增加功能开关指令：event状态/event配置 
+  - 🐛修复群文件不能检测bug(少写一个字母qwq)
+  - 优化目录结构
+
+- v0.1.7
+  - 🚨新增所有功能开关[#issue5](https://github.com/Reversedeer/nonebot_plugin_eventmonitor/issues/9)
+
+  - 🚨新增权限控制
+  - 🐛修复潜在的bug
+- v0.1.6
+  - 🐛修复bug
 - v0.1.5
-  - 优化配置文件 [#issue6](https://github.com/Reversedeer/nonebot_plugin_eventmonitor/issues/6)
+  - 🐛修复获取superusers数值bug
+  - 优化配置文件 [#issue4](https://github.com/Reversedeer/nonebot_plugin_eventmonitor/issues/6)
   - 删除冗余代码
-  - 修复获取superusers数值bug
-
 - v0.1.3
-  - 修复配置文件bug
+  - 🐛修复配置文件bug
 - v0.1.2
-  - 增加了戳一戳的文案
+  - 🚨增加戳一戳的文案
 
-  - 修改一些bug
+  - 🐛修复bug
 - v0.1.1
 
-  - 好像改了什么..忘了...
+  - 🐛修复bug
 - v0.1.0
+  - 🚨新增戳一戳加了cd（本人觉得功能鸡肋）
+  - 🐛修复管理员变动时API报错问题[#issue1](https://github.com/Reversedeer/nonebot_plugin_eventmonitor/issues/1)
   - 抛弃原有的配置模式
-  - 给戳一戳加了cd（本人觉得功能鸡肋）
-  - 修复管理员变动时API报错问题[#issue1](https://github.com/Reversedeer/nonebot_plugin_eventmonitor/issues/1)
 - v0.0.6
-  - 修复了大量的bug
+  - 🐛修复了大量的bug
   </details>
 
 ## 关于 ISSUE
@@ -116,6 +177,7 @@ pip install --upgrade nonebot-plugin-eventmonitor
 
 ## 其他插件
 
+[舔狗日记](https://github.com/Reversedeer/nonebot_plugin_dog)
+
 [使用API的chatGPTQQ聊天机器人](https://github.com/Reversedeer/nonebot_plugin_chatGPT_openai)
 
-[舔狗日记](https://github.com/Reversedeer/nonebot_plugin_dog)
